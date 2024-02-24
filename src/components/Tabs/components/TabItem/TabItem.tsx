@@ -1,6 +1,6 @@
 import {css, styled} from "styled-components";
 import {ReactNode} from "react";
-import {theme} from "../../theme";
+import {theme} from "../../../../theme";
 
 interface TabProps {
     id?: number;
@@ -14,7 +14,7 @@ interface StyleProps {
     $isSelected: boolean;
 }
 
-const Tab = ({title, onClick, $isSelected}: TabProps) => {
+const TabItem = ({title, onClick, $isSelected}: TabProps) => {
 
     return (
         <TabStyled $isSelected={$isSelected} onClick={onClick}>
@@ -23,7 +23,7 @@ const Tab = ({title, onClick, $isSelected}: TabProps) => {
     );
 };
 
-export default Tab;
+export default TabItem;
 
 const TabStyled = styled.div<StyleProps>`
     display: flex;
@@ -35,9 +35,9 @@ const TabStyled = styled.div<StyleProps>`
     letter-spacing: 1.5px;
     color: ${theme.fontColor.primary};
     transition: background-color 0.3s, color 0.3s;
-    
-    &:hover{
-        background-color:  ${theme.fontColor.secondaryLighter};
+
+    &:hover {
+        background-color: ${theme.fontColor.secondaryLighter};
         color: ${theme.backgroundColor.primary};
     }
 

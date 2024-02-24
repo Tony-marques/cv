@@ -1,15 +1,13 @@
 import {styled} from "styled-components";
-import TabList from "../TabList/TabList.tsx";
-import TabContent from "../TabContent/TabContent.tsx";
-import {useTabsContext} from "../../contexts/TabsContext.tsx";
+import TabList from "./components/TabList/TabList.tsx";
+import TabContent from "./components/TabContent/TabContent.tsx";
 
 const Tabs = () => {
-    const {selectedTab} = useTabsContext()
 
     return (
         <TabsStyled>
             <TabList/>
-            <TabContent selectedTab={selectedTab}/>
+            <TabContent/>
         </TabsStyled>
     );
 };

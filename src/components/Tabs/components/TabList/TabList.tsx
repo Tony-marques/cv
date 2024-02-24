@@ -1,19 +1,16 @@
 import {styled} from "styled-components";
-import Tab from "../Tab/Tab.tsx";
-import {TabsConfig} from "../Tabs/TabsConfig.tsx";
-import {useTabsContext} from "../../contexts/TabsContext.tsx";
-import {theme} from "../../theme";
+import TabItem from "../TabItem/TabItem.tsx";
+import {useTabsContext} from "../../../../contexts/TabsContext.tsx";
+import {theme} from "../../../../theme";
 
 const TabList = () => {
-    const {selectedTab, handleSelectedTab} = useTabsContext();
-
-    const config = TabsConfig;
+    const {selectedTab, handleSelectedTab, tabs} = useTabsContext();
 
     return (
         <TabListStyled>
-            {config?.map(({id, title}) => {
+            {tabs?.map(({id, title}) => {
                 return (
-                    <Tab
+                    <TabItem
                         key={id}
                         title={title}
                         $isSelected={selectedTab === id}

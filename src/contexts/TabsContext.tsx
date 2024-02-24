@@ -1,5 +1,6 @@
 import {createContext, ReactNode, useContext} from "react";
-import {useTabs} from "../hooks/useTabs.ts";
+import {useTabs} from "../hooks/useTabs.tsx";
+import {TabInterface} from "../interfaces/TabInterface.ts";
 
 interface TabsContextProviderProps {
     children: ReactNode;
@@ -8,17 +9,19 @@ interface TabsContextProviderProps {
 interface ITabsContext {
     selectedTab: number;
     handleSelectedTab: (id: number) => void;
+    tabs: TabInterface[];
 }
 
 const TabsContext = createContext<ITabsContext | null>(null);
 
 export const TabsContextProvider = ({children}: TabsContextProviderProps) => {
 
-    const {selectedTab, handleSelectedTab} = useTabs();
+    const {selectedTab, handleSelectedTab, tabs} = useTabs();
 
     const contextValue: ITabsContext = {
         selectedTab,
-        handleSelectedTab
+        handleSelectedTab,
+        tabs
     };
 
     return <TabsContext.Provider value={contextValue}>
