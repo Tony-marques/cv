@@ -17,9 +17,20 @@ const borderRadius = {
     small: "5px"
 };
 
+const colorLogo = {
+    javascript: "#F0DC55",
+    php: "#7B7FB5",
+    react: "#00D8FF",
+    symfony: "#211E22",
+    git: "#E84D31",
+    github: "#161414",
+    scrum: "#26A3BC",
+    trello: "#007CC3"
+};
 export const theme = {
     backgroundColor,
     fontColor,
     borderColor,
-    borderRadius
+    borderRadius,
+    colorLogo
 };
