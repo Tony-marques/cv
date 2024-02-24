@@ -8,7 +8,7 @@ export const useTabs = () => {
     const tabs: TabInterface[] = [
         {id: 1, title: "Présentation", content: <Presentation/>},
         {id: 2, title: "Compétences & expériences", content: <ExperiencesAndSkills/>},
-        {id: 3, title: "Scolarité", content: "Scolarité"}
+        {id: 3, title: "Formations", content: "formations"}
     ];
     const handleSelectedTab = (id: number) => {
         setSelectedTab(id);

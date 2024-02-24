@@ -10,35 +10,38 @@ const Skills = () => {
                 <div className="groups">
                     <h3>Langage de programmation</h3>
                     <div className="languages">
-                        <i className="fa-brands fa-js"></i>
-                        <i className="fa-brands fa-php"></i>
+                        <i className="fa-brands fa-js" title="javascript"></i>
+                        <img className="typescript" src="/assets/images/typescript.svg" alt="logo typescript"
+                             title="typescript"/>
+                        <i className="fa-brands fa-php" title="PHP"></i>
                     </div>
                 </div>
                 <div className="groups">
                     <h3>Framework</h3>
                     <div className="languages">
-                        <i className="fa-brands fa-react"></i>
-                        <i className="fa-brands fa-symfony"></i>
+                        <i className="fa-brands fa-react" title="react"></i>
+                        <i className="fa-brands fa-symfony" title="symfony"></i>
                     </div>
                 </div>
                 <div className="groups">
                     <h3>SGBD</h3>
                     <div className="languages">
-                        <img className="mysql" src="/assets/images/mysql-icon.svg" alt=""/>
+                        <img className="mysql" src="/assets/images/mysql-icon.svg" alt="logo mysql" title="MySQL"/>
                     </div>
                 </div>
                 <div className="groups">
                     <h3>Versionning</h3>
                     <div className="languages">
-                        <i className="fa-brands fa-git-alt"></i>
-                        <i className="fa-brands fa-github"></i>
+                        <i className="fa-brands fa-git-alt" title="git"></i>
+                        <i className="fa-brands fa-github" title="Github"></i>
                     </div>
                 </div>
                 <div className="groups">
                     <h3>Méthodologie</h3>
                     <div className="languages">
-                        <img className="scrum" src="/assets/images/scrum.svg" alt=""/>
-                        <i className="fa-brands fa-trello"></i>
+                        <img className="scrum" src="/assets/images/scrum.svg" alt="logo méthode scrum"
+                             title="méthode agile Scrum"/>
+                        <i className="fa-brands fa-trello" title="trello"></i>
                     </div>
                 </div>
 
@@ -53,10 +56,8 @@ export default Skills;
 const SkillsStyled = styled.div`
     flex: 1.5;
     height: 100%;
-    //border: 1px solid blue;
     color: ${theme.fontColor.primary};
-    margin-left: 2rem;
-
+    padding-left: 2rem;
 
     h2 {
         font-size: 2rem;
@@ -103,7 +104,7 @@ const SkillsStyled = styled.div`
                 }
 
                 .mysql {
-                    width: 40px;
+                    width: 35px;
                 }
 
                 .fa-git-alt {
@@ -116,12 +117,15 @@ const SkillsStyled = styled.div`
                 }
 
                 .scrum {
-                    width: 40px;
-                    color: red;
+                    width: 35px;
                 }
 
                 .fa-trello {
                     color: ${theme.colorLogo.trello};
+                }
+
+                .typescript {
+                    width: 35px;
                 }
             }
         }
