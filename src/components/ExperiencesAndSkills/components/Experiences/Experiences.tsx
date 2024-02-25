@@ -1,111 +1,72 @@
 import {styled} from "styled-components";
 import {theme} from "../../../../theme";
+import Experience from "../Experience/Experience.tsx";
+
+interface IExperience {
+    title: string;
+    elementDetails: string[];
+    date: string;
+}
 
 const Experiences = () => {
+    const experiences: IExperience[] = [
+        {
+            title: "Armée de l'air et de l'espace - Réserve citoyenne",
+            elementDetails: [
+                "Gestion des finances pour le rayonnement de l'Armée de l'air et de l'espace au travers du CESA."
+            ],
+            date: "Nov 2023 - Aujourd'hui"
+        },
+        {
+            title: "Armée de l'air et de l'espace - Comptable",
+            elementDetails: [
+                "Demandes d'achat pour plusieurs unités de la place parisienne, les bases aériennes de France concernant la venue d'avions anciens et les musées dans les bases.",
+                "Suivi des dossiers de la création de la demande jusqu'à la livraison (via CHORUS Formulaire)."
+            ],
+            date: "Nov 2018 - Nov 2023"
+        },
+        {
+            title: "Kantar Worldpanel - Chargé d'études statistiques",
+            elementDetails: [
+                "Mise à jour des bases de données produits depuis les logiciels internes (MKE, Sicéron) pour des clients de type média (TF1, M6, France TV , NRJ12).",
+                "Génération de probabilités (logiciel interne Mediaway)."
+            ],
+            date: "Sept 2015 - Nov 2018"
+        },
+        {
+            title: "Super U - Employé commercial",
+            elementDetails: [
+                "Gestion d'une équipe de 3 personnes du rayon boulangerie (planning, commandes, suivi des stocks).",
+                "Mise en rayon fruits et légumes, facing.",
+                "Prise de commandes avec le logiciel Univers.",
+                "Réception des marchandises."
+            ],
+            date: "Déc 2014 - Sept 2015"
+        },
+        {
+            title: "Précédentes expériences",
+            elementDetails: [
+                "Stagiaire commercial - Casino Shopping (Mai à Octobre 2013).",
+                "Opérateur codificateur - Kantar média (7 mois de 2011 à 2014).",
+                "Technicien de maintenance - Kantar média (3 mois de 2008 à 2010)."
+            ],
+            date: "2008 - 2014"
+        }
+    ];
+
     return (
         <ExperiencesStyled>
             <h2>Expériences professionnelles</h2>
             <div className="experiences-container">
-                <div className="groups">
-                    <h3>Armée de l'air et de l'espace - Réserve citoyenne</h3>
-                    <div className="experience">
-                        <div className="details">
-                            <p>Gestion des finances pour le rayonnement de l'Armée de l'air et de l'espace au travers du
-                                CESA.</p>
-                        </div>
-                        <div className="dates">
-                            <div className="tag">Nov 2023 - Aujourd'hui</div>
-                        </div>
-                    </div>
-                </div>
-                <div className="separator"></div>
-                <div className="groups">
-                    <h3>Armée de l'air et de l'espace - Comptable</h3>
-                    <div className="experience">
-                        <div className="details">
-                            <p>
-                                Demandes d'achat pour plusieurs unités de la place parisienne, les bases aériennes de
-                                France
-                                concernant la venue d'avions anciens et les musées dans les bases.
-                            </p>
-                            <p>
-                                Suivi des dossiers de la création de la demande jusqu'à la livraison (via CHORUS
-                                Formulaire).
-                            </p>
-                        </div>
-                        <div className="dates">
-                            <div className="tag">Nov 2018 - Nov 2023</div>
-                        </div>
-
-                    </div>
-                </div>
-                <div className="separator"></div>
-                <div className="groups">
-                    <h3>Kantar Worldpanel - Chargé d'études statistiques</h3>
-                    <div className="experience">
-                        <div className="details">
-                            <p>
-                                Mise à jour des bases de données produits depuis les logiciels internes (MKE, Sicéron)
-                                pour des clients de type média (TF1, M6, France TV , NRJ12).
-                            </p>
-                            <p>
-                                Génération de probabilités (logiciel interne Mediaway).
-                            </p>
-                        </div>
-                        <div className="dates">
-                            <div className="tag">Sept 2015 - Nov 2018</div>
-                        </div>
-
-                    </div>
-                </div>
-                <div className="separator"></div>
-                <div className="groups">
-                    <h3>Super U - Employé commercial</h3>
-                    <div className="experience">
-                        <div className="details">
-                            <p>
-                                Gestion d'une équipe de 3 personnes du rayon boulangerie (planning, commandes, suivi des
-                                stocks).
-                            </p>
-                            <p>
-                                Mise en rayon fruits et légumes, facing.
-                            </p>
-                            <p>
-                                Prise de commandes avec le logiciel Univers.
-                            </p>
-                            <p>
-                                Réception des marchandises.
-                            </p>
-                        </div>
-                        <div className="dates">
-                            <div className="tag">Déc 2014 - Sept 2015</div>
-                        </div>
-
-                    </div>
-                </div>
-                <div className="separator"></div>
-                <div className="groups">
-                    <h3>Précédentes expériences</h3>
-                    <div className="experience">
-                        <div className="details">
-                            <p>
-                                Stagiaire commercial - Casino Shopping (Mai à Octobre 2013).
-
-                            </p>
-                            <p>
-                                Opérateur codificateur - Kantar média (7 mois de 2011 à 2014).
-
-                            </p>
-                            <p>
-                                Technicien de maintenance - Kantar média (3 mois de 2008 à 2010).
-                            </p>
-                        </div>
-                        <div className="dates">
-                            <div className="tag">2008 - 2014</div>
-                        </div>
-
-                    </div>
-                </div>
+                {experiences.map(({title, elementDetails, date}: IExperience) => {
+                    return (
+                        <Experience
+                            title={title}
+                            elementDetails={elementDetails}
+                            date={date}
+                        />
+                    );
+                })}
             </div>
         </ExperiencesStyled>
     );
@@ -130,7 +91,6 @@ const ExperiencesStyled = styled.div`
         margin-right: 2rem;
 
         .groups {
-
 
             h3 {
                 font-size: 1.3rem;
@@ -164,10 +124,5 @@ const ExperiencesStyled = styled.div`
                 }
             }
         }
-
-        .separator {
-            border-top: 1px solid ${theme.borderColor.primary};
-        }
     }
-
 `;

@@ -3,14 +3,14 @@ import {theme} from "../../theme";
 import {motion} from "framer-motion";
 import Formation from "./components/Formation/Formation.tsx";
 
-interface IFormations {
+interface IFormation {
     title: string;
     elementDetails: string[];
     date: string;
 }
 
 const Formations = () => {
-    const formations: IFormations[] = [
+    const formations: IFormation[] = [
         {
             title: "Développeur d'application PHP/symfony - OpenClassrooms (diplôme RNCP de niveau 6)",
             elementDetails: [
@@ -49,7 +49,7 @@ const Formations = () => {
             <div className="container">
                 <h2>Formations</h2>
                 <div className="experiences-container">
-                    {formations.map(({title, elementDetails, date}: IFormations) => {
+                    {formations.map(({title, elementDetails, date}: IFormation) => {
                         return (
                             <>
                                 <Formation

@@ -1,15 +1,15 @@
 import {styled} from "styled-components";
 import {theme} from "../../../../theme";
 
-interface FormationProps {
+interface ExperienceProps {
     title: string;
     elementDetails: string[];
     date: string;
 }
 
-const Formation = ({title, elementDetails, date}: FormationProps) => {
+const Experience = ({title, elementDetails, date}: ExperienceProps) => {
     return (
-        <FormationStyled>
+        <ExperienceStyled>
             <h3>{title}</h3>
             <div className="experience">
                 <div className="details">
@@ -23,13 +23,13 @@ const Formation = ({title, elementDetails, date}: FormationProps) => {
                     <div className="tag">{date}</div>
                 </div>
             </div>
-        </FormationStyled>
+        </ExperienceStyled>
     );
 };
 
-export default Formation;
+export default Experience;
 
-const FormationStyled = styled.div`
+const ExperienceStyled = styled.div`
     border-bottom: 1px solid ${theme.borderColor.primary};
     padding-bottom: 1rem;
 
