@@ -1,9 +1,14 @@
 import {styled} from "styled-components";
 import {theme} from "../../theme";
+import {motion} from "framer-motion";
 
 const Formations = () => {
     return (
-        <ExperiencesStyled>
+        <ExperiencesStyled
+            initial={{x: "-25%"}}
+            animate={{x: "0"}}
+            transition={{type: "spring", stiffness: 150}}
+        >
             <div className="container">
                 <h2>Formations</h2>
                 <div className="experiences-container">
@@ -64,7 +69,7 @@ const Formations = () => {
 
 export default Formations;
 
-const ExperiencesStyled = styled.div`
+const ExperiencesStyled = styled(motion.div)`
     flex: 4;
     color: ${theme.fontColor.primary};
     overflow-y: hidden;

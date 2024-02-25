@@ -1,10 +1,15 @@
 import {styled} from "styled-components";
 import Informations from "../Informations/Informations.tsx";
 import SocialMedia from "../SocialMedia/SocialMedia.tsx";
+import {motion} from "framer-motion";
 
 const Presentation = () => {
     return (
-        <PresentationStyled>
+        <PresentationStyled
+            initial={{x: "-25%"}}
+            animate={{x: "0"}}
+            transition={{type: "spring", stiffness: 150}}
+        >
             <Informations/>
             <SocialMedia/>
         </PresentationStyled>
@@ -13,7 +18,7 @@ const Presentation = () => {
 
 export default Presentation;
 
-const PresentationStyled = styled.div`
+const PresentationStyled = styled(motion.div)`
     height: 100%;
     display: flex;
     gap: 2rem;
