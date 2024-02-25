@@ -1,5 +1,5 @@
 import {styled} from "styled-components";
-import {theme} from "../../theme";
+import {theme} from "../../../../theme";
 
 const Experiences = () => {
     return (
@@ -117,9 +117,6 @@ const ExperiencesStyled = styled.div`
     flex: 4;
     color: ${theme.fontColor.primary};
     overflow-y: scroll;
-    //padding-bottom: 2rem;
-    //overflow-y: scroll;
-
 
     h2 {
         font-size: 2rem;
@@ -143,14 +140,11 @@ const ExperiencesStyled = styled.div`
 
             .experience {
                 display: flex;
-                //border: 1px solid orange;
                 gap: 2rem;
                 line-height: 1.5;
 
                 .details {
                     flex: 2;
-
-                    //justify-content: ;
                 }
 
                 .dates {

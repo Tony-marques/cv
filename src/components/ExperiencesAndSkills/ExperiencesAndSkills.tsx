@@ -1,6 +1,6 @@
 import {styled} from "styled-components";
 import Skills from "./components/Skills/Skills.tsx";
-import Experiences from "./Experiences.tsx";
+import Experiences from "./components/Experiences/Experiences.tsx";
 import {theme} from "../../theme";
 
 const ExperiencesAndSkills = () => {
@@ -32,6 +32,5 @@ const SkillsStyled = styled.div`
     ::-webkit-scrollbar-thumb {
         background: ${theme.fontColor.secondary};
         border-radius: 50px;
-
     }
 `;
