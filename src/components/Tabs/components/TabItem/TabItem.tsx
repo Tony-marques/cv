@@ -1,6 +1,7 @@
 import {css, styled} from "styled-components";
 import {ReactNode} from "react";
 import {theme} from "../../../../theme";
+import {motion} from "framer-motion";
 
 interface TabProps {
     id?: number;
@@ -15,9 +16,12 @@ interface StyleProps {
 }
 
 const TabItem = ({title, onClick, $isSelected}: TabProps) => {
+    // const controls = useAnimation();
 
     return (
-        <TabStyled $isSelected={$isSelected} onClick={onClick}>
+        <TabStyled $isSelected={$isSelected} onClick={onClick}
+            // animate={controls}
+        >
             <p>{title}</p>
         </TabStyled>
     );
@@ -25,7 +29,7 @@ const TabItem = ({title, onClick, $isSelected}: TabProps) => {
 
 export default TabItem;
 
-const TabStyled = styled.div<StyleProps>`
+const TabStyled = styled(motion.div)<StyleProps>`
     display: flex;
     justify-content: center;
     cursor: pointer;
